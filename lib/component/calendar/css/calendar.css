@@ -1,0 +1,85 @@
+
+.calendar{
+  position: relative;
+  transition: var(--transition);
+  background: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.2);
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  user-select: none;
+  box-sizing: border-box;
+}
+.calendar .card{
+  width:100%;
+  border-spacing: 20px 0px;
+  text-align:right;
+}
+.calendar .card tbody td{
+  transition: var(--transition);
+  box-sizing: border-box;
+  border-top: 2px solid rgba(5, 5, 5, 0.06);
+}
+.calendar .card tbody td .showDate{
+  height:25px;
+  line-height:25px;
+}
+.calendar .card tbody td ul{
+  height:calc(100% - 25px);
+  overflow:hidden;
+  overflow-y:auto;
+  text-align:left;
+  width:100%;
+}
+.calendar .card tbody td li{
+  margin:6px 0;
+}
+.calendar .card tbody td li .mark{
+  height:6px;
+  width:6px;
+  border-radius:50%;
+  background:#000;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right:6px;
+}
+.calendar .default{
+  width:100%
+}
+.calendar .default tr{
+  text-align:center;
+}
+.calendar .default td div{
+  height: 100%;
+  width: 100%;
+  cursor:pointer;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.calendar .default td{
+  transition: var(--transition);
+  border-radius:8px;
+}
+.calendar .default tbody td:hover{
+  background: #ebe9e8;
+}
+.calendar .default .prev{
+  color: rgba(0,17,34,0.4) !important;
+}
+.calendar .default .now{
+  color: #FF963A;
+  box-shadow:  0 0 0 1px #FF963A;
+}
+.calendar .default .select{
+  background: #FF963A !important;
+  color: #fff !important;
+}
+.calendar .serach{
+  padding: 10px 0;
+}
+.calendar .serach .item{
+  margin-right: 10px;
+}

@@ -1,0 +1,93 @@
+:root{
+  --transition:all 0.3s;
+  --blue:#4096ff;
+  --blue-dark:#1963ca;
+  --grey:#d9d9d9;
+  --white:#fff;
+}
+.c-pointer{
+  cursor: pointer;
+}
+.user-noselect{
+  user-select: none;
+}
+.overflow-hidden{
+  overflow: hidden;
+}
+.text-nowrap{
+  white-space: nowrap;
+}
+.ell{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+ul,li{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.flex{
+  display: flex;
+}
+.flex-r-r{
+  flex-direction: row-reverse;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-between{
+  justify-content: space-between;
+}
+.flex-around{
+  justify-content: space-around;
+}
+.flex-row{
+  flex-direction: row;
+}
+.flex-column{
+  flex-direction: column;
+}
+.flex-align-center{
+  align-items: center;
+}
+.flex-justify-center{
+  justify-content: center;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+.flex-nowrap{
+  flex-wrap: nowrap;
+}
+
+.zzcpt-loading{
+  position: relative;
+}
+
+.cpt-massage-container{
+  position: fixed;
+  z-index: 1000;
+  width: auto;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cpt-message {
+  z-index: 10000;
+  font-size: 14px;
+  width:fit-content;
+  box-sizing: border-box;
+  padding:20px 0;
+  pointer-events: none;
+  box-shadow: 0 2px 12px 3px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
