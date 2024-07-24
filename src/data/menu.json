@@ -1,0 +1,57 @@
+{
+    "Button": {
+        "id":1,
+        "name": "按钮 button",
+        "type":"button",
+        "path": "/button"
+    },
+    "DropDown": {
+        "id":2,
+        "name": "下拉菜单 dropdown",
+        "type": "dropdown",
+        "path": "/dropdown"
+    },
+    "calendar": {
+        "id":3,
+        "name": "日历 calendar",
+        "type": "calendar",
+        "path": "/calendar"
+    },
+    "switch": {
+        "id":4,
+        "name": "开关 switch",
+        "type": "switch",
+        "path": "/switch"
+    },
+    "select":{
+        "id":5,
+        "name": "选择器 select",
+        "type": "select",
+        "path": "/select"
+    },
+    "checkbox":{
+        "id":6,
+        "name": "复选框 checkbox",
+        "type": "checkbox",
+        "path": "/checkbox"
+    },
+    "radio":{
+        "id":7,
+        "name": "单选框 radio",
+        "type": "radio",
+        "path": "/radio"
+    },
+
+    "showText":{
+        "id":9,
+        "name": "显示文本 showText",
+        "type": "showtext",
+        "path": "/showText"
+    },
+    "loading":{
+        "id":10,
+        "name": "加载 loading",
+        "type": "loading",
+        "path": "/loading"
+    }
+}
