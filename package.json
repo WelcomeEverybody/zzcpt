@@ -25,6 +25,8 @@
   ],
   "author": "zzcpt",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
@@ -41,6 +43,7 @@
   "devDependencies": {
     "@types/prismjs": "^1.26.4",
     "@vitejs/plugin-vue": "^4.2.3",
+    "gh-pages": "^6.1.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-prismjs": "^0.0.11",
