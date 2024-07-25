@@ -14,12 +14,12 @@ const show = ref(false)
 </script>
 
 <template>
-    <p style="margin-top: 20px;">
+    <pre v-show="show"><code class="language-html line-numbers">{{ props.code }}</code></pre>
+    <p>
         <Cpt-button @click="show = !show" style="width: 100%;">
             {{ show ? '隐藏代码' : '显示代码' }}
         </Cpt-button>
     </p>
-    <pre v-show="show"><code class="language-html line-numbers">{{ props.code }}</code></pre>
 </template>
 <style scoped>
 pre {

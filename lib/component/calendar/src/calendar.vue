@@ -21,6 +21,8 @@ export default defineComponent({
 
     const selectBox = ref(<any>[])
 
+    const dom = ref()
+
     const year = ref(new Date().getFullYear());
     const month = ref(new Date().getMonth() + 1);
 
@@ -128,12 +130,12 @@ export default defineComponent({
       e('update:modelValue',selectBox.value);
     }
     const isFullscreenFn = () => {
-      const calendar = document.getElementById('calendar') as HTMLElement;
+      const calendar = dom.value as HTMLElement;
       calendar.style.cssText = 'position:absolute;top:0;left:0;width:100%;z-index:1100;';
       boxItemWidth.value = (window.innerHeight * (100 / calendarList.value.length)) / 100 - (20/calendarList.value.length);
     };
     const noFullscreenFn = () => {
-      const calendar = document.getElementById('calendar') as HTMLElement;
+      const calendar = dom.value as HTMLElement;
       calendar.style.cssText = `width:${boxWidth.value}px`;
       boxItemWidth.value = boxWidth.value / 7;
     }
@@ -204,14 +206,15 @@ export default defineComponent({
       selectMonth,
       year,month,
       changeCalendar,
-      returnFullscreen
+      returnFullscreen,
+      dom
     }
   }
 })
 </script>
 
 <template>
-  <div id="calendar"  class="calendar">
+  <div id="calendar"  class="calendar" ref="dom">
     <div class="serach flex">
       <CptButton v-if="fullscreen" @click="returnFullscreen" type="primary">退出</CptButton>
       <div v-else></div>

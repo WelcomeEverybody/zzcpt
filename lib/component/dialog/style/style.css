@@ -1,0 +1,61 @@
+
+.CptAlert{
+	z-index: 1000;
+}
+.CptAlert .content{
+	--f-s:18px;
+	box-sizing: border-box;
+	position: absolute;
+	height: fit-content;
+	background-color: #fff;
+	z-index: 1000;
+	border-radius: 8px;
+	transform-origin: 0 0;
+	transform: scale(0);
+	overflow: hidden;
+}
+.CptAlert .content .body{
+	box-sizing: border-box;
+	word-wrap: break-word;
+	padding: 20px;
+}
+.CptAlert .content .btn{
+	display: flex;
+	height: 56px;
+}
+.CptAlert .content .head{
+	font-size: var(--f-s);
+	font-weight: 400;
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+	position: relative;
+	
+}
+.CptAlert .content .head .icon{
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+.CptAlert .content .btn button{
+	font-size: var(--f-s);
+	font-weight: 400;
+	height: 100%;
+	flex: 1;
+	cursor: pointer;
+	outline: none;
+}
+.CptAlert .content .btn button:last-child{
+	border-right: none;
+}
+.CptAlert .bg{
+	z-index: 1000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.25);
+}

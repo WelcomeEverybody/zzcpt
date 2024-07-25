@@ -1,28 +1,9 @@
 <script>
 import { ref,defineComponent,onMounted,watch } from 'vue';
-import { Close } from "@element-plus/icons-vue";
+import {dialogProps} from "./attribute"
 export default defineComponent({
-	name: 'CptAlert',
-	props:{
-		modelValue:{type:Boolean,default:false},
-		width:{type:String,default:'60%'},
-		title:{type:String,default:"提示"},
-		headBg:{type:String,default:'#F1F4F8'},
-		headColor:{type:String,default:'#000'},
-		headShow:{type:Boolean,default:true},
-		iconShow:{type:Boolean,default:true},
-		footShow:{type:Boolean,default:true},
-		bgClose:{type:Boolean,default:true},
-		leaveText:{type:String,default:'取消'},
-		enterText:{type:String,default:'确定'},
-		leaveColor:{type:String,default:'#000'},
-		enterColor:{type:String,default:'#000'},
-		leaveShow:{type:Boolean,default:true},
-		enterShow:{type:Boolean,default:true},
-	},
-	components:{
-		Close
-	},
+	name: 'CptDialog',
+	props:dialogProps,
 	emits:['update:modelValue','close','enter'],
 	setup(prop,{emit}){
 		const pointX = ref();
@@ -88,6 +69,7 @@ export default defineComponent({
 		}
 		changePoint();
 		onMounted(() => {
+			
 		})
 		watch(() => prop.modelValue, (newVal) => {
 			setTimeout(() => {
@@ -114,77 +96,19 @@ export default defineComponent({
 			<div ref="content" class="content" :style="{width:width}">
 				<div class="head" :style="{background:headBg,color:headColor}" ref="head" v-if="headShow">
 					{{ title }}
-					<el-icon v-if="iconShow" @click="closeDialog"  class="icon"><Close /></el-icon>
+					<!-- <el-icon v-if="iconShow" @click="closeDialog"  class="icon"><Close /></el-icon> -->
 				</div>
 				<div class="body">
 					<slot></slot>
 				</div>
 				<div class="btn" v-if="footShow">
-					<button v-if="leaveShow" :style="{color:leaveColor}" @click="closeDialog">{{leaveText}}</button>
-					<button v-if="enterShow" :style="{color:enterColor}" @click="BtnEnter">{{enterText}}</button>
+					<Cpt-button :type="leaveType" v-if="leaveShow" :style="{color:leaveColor}" @click="closeDialog">{{leaveText}}</Cpt-button>
+					<Cpt-button :type="enterType" v-if="enterShow" :style="{color:enterColor}" @click="BtnEnter">{{enterText}}</Cpt-button>
 				</div>
 			</div>
 		</div>
 	</teleport>
 </template>
-<style lang="scss" scoped>
-.CptAlert{
-	z-index: 1000;
-	.content{
-		--f-s:18px;
-		box-sizing: border-box;
-		position: absolute;
-		height: fit-content;
-		background-color: #fff;
-		z-index: 1001;
-		border-radius: 8px;
-		transform-origin: 0 0;
-		transform: scale(0);
-		overflow: hidden;
-		.body{
-			box-sizing: border-box;
-			word-wrap: break-word;
-			padding: 20px;
-		}
-		.btn{
-			display: flex;
-			border-top:1px solid #CFD9E4;
-			height: 56px;
-			button{
-				font-size: var(--f-s);
-				font-weight: 400;
-				flex: 1;
-				border-left: 1px solid #CFD9E4;
-				cursor: pointer;
-			}
-			button::last-child{
-				border-right: none;
-			}
-		}
-		.head{
-			font-size: var(--f-s);
-			font-weight: 400;
-			height: 55px;
-			line-height: 55px;
-			text-align: center;
-			position: relative;
-			.icon{
-				position: absolute;
-				right: 20px;
-				top: 50%;
-				transform: translateY(-50%);
-				cursor: pointer;
-			}
-		}
-	}
-	.bg{
-		z-index: 1000;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-		background-color: rgba($color: #000000, $alpha: 0.25);
-	}
-}
+<style scoped>
+@import "../style/style.css";
 </style>

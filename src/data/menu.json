@@ -46,12 +46,18 @@
         "id":9,
         "name": "显示文本 showText",
         "type": "showtext",
-        "path": "/showText"
+        "path": "/showtext"
     },
     "loading":{
         "id":10,
         "name": "加载 loading",
         "type": "loading",
         "path": "/loading"
+    },
+    "dialog":{
+        "id":11,
+        "name": "对话框 dialog",
+        "type": "dialog",
+        "path": "/dialog"
     }
 }

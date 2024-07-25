@@ -3,7 +3,7 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'CptShowText',
-  props:{line:{type:String,default:3}},
+  props:{line:{type:String,default:"3"}},
   setup(props) {
     const changeCSS = () => {
       const str = `-webkit-line-clamp: ${props.line}`;

@@ -13,7 +13,8 @@ import zzcpt, {
   CptSlider,
   CptShowText,
   CptInput,
-  loading
+  loading,
+  CptDialog
 } from "./component/index";
 
 const components = zzcpt;
@@ -46,5 +47,6 @@ export {
   CptShowText,
   CptInput,
   loading,
+  CptDialog,
   ZUI as default
 };

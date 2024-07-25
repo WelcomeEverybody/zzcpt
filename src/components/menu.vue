@@ -1,19 +1,21 @@
 <script lang="ts" setup name="menu">
+import {ref} from "vue"
 import { useRouter } from 'vue-router';
 import menuJson from '../data/menu.json';
-
-const router = useRouter().currentRoute.value.fullPath.replace(/\//g, '');
+const router = ref(useRouter().currentRoute.value.fullPath.replace(/\//g, ''));
+useRouter().beforeEach(to => {
+    router.value = to.fullPath.replace(/\//g, '');
+})
 </script>
 
 <template>
     <div class="menu">
         <div 
             class="item cursor transition" 
-            :class="[router == item.type ? 'active' : '']"
             v-for="item in menuJson" 
             :key="item.id"
         >
-            <a class="text" :class="[router == item.type ? 'active' : '']" :href="item.path">{{ item.name }}</a>
+            <router-link class="text" :class="[router == item.type ? 'active' : '']" :to="item.path">{{ item.name }}</router-link>
         </div>
     </div>
 </template>

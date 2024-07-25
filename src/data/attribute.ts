@@ -57,6 +57,27 @@ const data: any = {
     {a:"v-loading",b:"是否显示加载中",c:'boolean',d:"false"},
     {a:"v-loading-text",b:"加载中文字",c:'string',d:"loading"},
     {a:"v-loading-color",b:"加载中颜色",c:'string',d:"#409EFF"},
+  ],
+  dialog:[
+    {a:"modelValue",b:"绑定值",c:"boolean",d:"-"},
+    {a:"width",b:"宽度",c:"string",d:"60%"},
+    {a:"title",b:"标题",c:"string",d:"提示"},
+    {a:"headBg",b:"头部背景色",c:"string",d:"#F1F4F8"},
+    {a:"headColor",b:"头部字体颜色",c:"string",d:"#000"},
+    {a:"headShow",b:"是否显示头部",c:"boolean",d:"true"},
+    {a:"footShow",b:"是否显示底部",c:"boolean",d:"true"},
+    {a:"bgClose",b:"点击遮罩关闭",c:"boolean",d:"true"},
+    {a:"leaveText",b:"取消文字",c:"string",d:"取消"},
+    {a:"enterText",b:"确定文字",c:"string",d:"确定"},
+    {a:"leaveColor",b:"取消文字颜色",c:"string",d:"#000"},
+    {a:"enterColor",b:"确定文字颜色",c:"string",d:"#000"},
+    {a:"leaveType",b:"取消按钮类型",c:"string",d:"primary"},
+    {a:"enterType",b:"确定按钮类型",c:"string",d:"warning"},
+    {a:"leaveShow",b:"是否显示取消按钮",c:"boolean",d:"true"},
+    {a:"enterShow",b:"是否显示确定按钮",c:"boolean",d:"true"},
+    {a:"事件",b:"事件",c:"事件",d:"事件"},
+    {a:"close",b:"关闭时触发/遮罩也会触发",c:"fn",d:"()=>{}"},
+    {a:"enter",b:"确定时触发",c:"fn",d:"()=>{}"},
   ]
 };
 export default data;

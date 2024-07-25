@@ -10,6 +10,7 @@ import { CptCheckbox,CptCheckboxGroup,CptCheckboxButton } from "./checkbox/index
 import { CptSlider } from "./slider/index";
 import { CptShowText } from "./showText/index";
 import { CptInput } from "./input/index";
+import { CptDialog } from "./dialog/index";
 import loading from "./loading/index";
 
 
@@ -26,7 +27,8 @@ const component = [
   CptSlider,
   CptShowText,
   CptInput,
-  loading
+  loading,
+  CptDialog
 ];
 
 export {
@@ -43,5 +45,6 @@ export {
   CptShowText,
   CptInput,
   loading,
+  CptDialog,
   component as default
 }

@@ -1,15 +1,15 @@
 {
   "name": "zzcpt",
-  "version": "0.1.46",
+  "version": "0.1.49",
   "private": false,
   "type": "module",
   "files": [
-    "dist"
+    "dist","lib","global.d.ts","types.ts"
   ],
   "main": "./dist/zzcpt.umd.cjs",
   "module": "./dist/zzcpt.js",
   "style": "./dist/style.css",
-  "types": "./dist/zzcpt.d.ts",
+  "typings": "./global.d.ts",
   "exports": {
     ".": {
       "import": "./dist/zzcpt.js",
