@@ -1,0 +1,1 @@
+import{d as o,c as t,o as n,a as e}from"./index-4bed872c.js";const s=e("h1",null,"Radio 单选框",-1),_=e("p",null,"常用的单选框",-1),c=e("h2",null,"基础用法",-1),a=e("p",null," 同checkbox复选框type不同 ",-1),l=[s,_,c,a],h=o({__name:"radio",setup(d){return(i,r)=>(n(),t("div",null,l))}});export{h as default};
