@@ -1,4 +1,4 @@
-import{C as x,A as h}from"./code-29f7115d.js";import{d as s,g as k,r as a,c as u,a as p,b as e,w as b,o as d}from"./index-8c37b172.js";const i=p("h1",null,"Checkbox 复选框",-1),r=p("p",null,"常用的复选框",-1),v=p("h2",null,"基础用法",-1),_={class:"preview"},V=p("div",{style:{height:"20px"}},null,-1),f=`<template>
+import{C as x,A as h}from"./code-9c60aece.js";import{d as s,g as k,r as a,c as u,a as p,b as e,w as b,o as d}from"./index-ea6d66b9.js";const i=p("h1",null,"Checkbox 复选框",-1),r=p("p",null,"常用的复选框",-1),v=p("h2",null,"基础用法",-1),_={class:"preview"},V=p("div",{style:{height:"20px"}},null,-1),f=`<template>
     <cpt-checkbox title="check1" v-model="checkBoxIs" name="1"></cpt-checkbox>
     <cpt-checkbox title="check2" v-model="checkBoxIs" name="2"></cpt-checkbox>
     <cpt-checkbox title="check3" v-model="checkBoxIs" name="3"></cpt-checkbox>

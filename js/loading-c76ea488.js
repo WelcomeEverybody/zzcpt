@@ -1,4 +1,4 @@
-import{C,A as h}from"./code-29f7115d.js";import{d as g,g as r,r as l,h as x,c as b,a as e,i as u,j as _,w as s,b as t,o as i,f as w}from"./index-8c37b172.js";const L=e("h1",null,"Loading 加载状态",-1),V=e("h2",null,"基础用法",-1),k={class:"preview"},y=e("p",{style:{"font-size":"14px"}}," 测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 ",-1),B=e("div",{style:{height:"20px"}},null,-1),T=`<template>
+import{C,A as h}from"./code-9c60aece.js";import{d as g,g as r,r as l,h as x,c as b,a as e,i as u,j as _,w as s,b as t,o as i,f as w}from"./index-ea6d66b9.js";const L=e("h1",null,"Loading 加载状态",-1),V=e("h2",null,"基础用法",-1),k={class:"preview"},y=e("p",{style:{"font-size":"14px"}}," 测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 测试文本测试文本测试文本测试文本测试文本测试文本测试文本测试文本 ",-1),B=e("div",{style:{height:"20px"}},null,-1),T=`<template>
     <Cpt-button @click="Loading1 = !Loading1">点击切换</Cpt-button>
     <CptShowText v-loading="Loading" style="width:300px;">
         <p style="font-size: 14px;">
