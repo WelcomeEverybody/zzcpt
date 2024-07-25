@@ -1,4 +1,4 @@
-import{C as r,A as i}from"./code-9c60aece.js";import{d as m,g as c,r as u,c as C,a,b as e,w as d,e as b,o as v}from"./index-ea6d66b9.js";const f=b('<h1>选择器 Select</h1><p>常用的选择器</p><h2>基础用法</h2><p>使用 <span class="lable-code">size</span>、 <span class="lable-code">labelColor</span>、 <span class="lable-code">labelBg</span>、 <span class="lable-code">multiline</span>、 <span class="lable-code">placeholder</span> 来自定义选择器 </p>',4),_={class:"preview"},h=a("div",{style:{height:"20px"}},null,-1),g=`<template>
+import{C as r,A as i}from"./code-2f2356ed.js";import{d as m,g as c,r as u,c as C,a,b as e,w as d,e as b,o as v}from"./index-0095776b.js";const f=b('<h1>选择器 Select</h1><p>常用的选择器</p><h2>基础用法</h2><p>使用 <span class="lable-code">size</span>、 <span class="lable-code">labelColor</span>、 <span class="lable-code">labelBg</span>、 <span class="lable-code">multiline</span>、 <span class="lable-code">placeholder</span> 来自定义选择器 </p>',4),_={class:"preview"},h=a("div",{style:{height:"20px"}},null,-1),g=`<template>
     <Cpt-select 
         v-model="selects" 
         labelColor="#f00" 
