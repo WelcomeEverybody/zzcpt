@@ -115,6 +115,7 @@
 }
 .cpt-text:active{
   color: #000;
+  background-color: #e6e6e6;
 }
 
 .cpt-loading{

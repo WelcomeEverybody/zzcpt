@@ -1,5 +1,6 @@
 <script lang="ts" setup>
-import Code from '../components/Code.vue'
+import Attribute from '../components/attribute.vue'
+import Code from '../components/code.vue'
 
 const code = 
 `<div>
@@ -63,5 +64,6 @@ const code =
             </div>
         </div>
         <Code :code="code" />
+        <Attribute name="button" />
     </div>
 </template>

@@ -6,8 +6,9 @@ import {CptSelect,CptOption} from "../../select/index";
 export default defineComponent({
   name:"CptCalendar",
   props:CalendarProps,
-  setup(_props){
-    const {fullscreen,todoList,colorType} = _props;
+  emits:['update:fullscreen','update:modelValue'],
+  setup(_props,{emit:e}){
+    const {fullscreen,todoList,colorType,modelValue} = _props;
     const type = ref(_props.type);
     if(!colorType){
       throw new Error("colorType is required");
@@ -86,9 +87,9 @@ export default defineComponent({
                       day:date,
                       now:isNowDay,
                       month:true,
-                      select:selectBox.value.includes(`${year}/${month}/${date}`),
-                      date:`${year}/${month}/${date}`,
-                      showDate:`${month}/${date}`,
+                      select:selectBox.value.includes(`${year}-${month}-${date}`),
+                      date:`${year}-${month}-${date}`,
+                      showDate:`${month}-${date}`,
                       todoList:[]
                   });
                   date++;
@@ -124,6 +125,7 @@ export default defineComponent({
       }else{
         selectBox.value = selectBox.value.filter((item:any)=>item!==items.date);
       }
+      e('update:modelValue',selectBox.value);
     }
     const isFullscreenFn = () => {
       const calendar = document.getElementById('calendar') as HTMLElement;
@@ -155,21 +157,23 @@ export default defineComponent({
           item.map((items:any) => {
             items.todoList = []
             todoLists.value.map((todo:any) => {
-              if(items.showDate === todo.date){
+              if(items.lunar.date === todo.date){
                 items.todoList = todo.list;
               }
             })
           })
         })
     };
+    const returnFullscreen = () => {
+      e('update:fullscreen',false)
+    }
     const todoLists = ref<any[]>([])
     watch(() => _props.todoList,(newV) => {
       if(newV.length > 0 && type.value == 'card'){
         todoLists.value = newV;
         addToDoList()
-
       }
-    })
+    },{immediate:true})
     watch(() => _props.fullscreen,(newV) => {
       const dom = document.getElementById('calendar')!.parentNode as HTMLElement;
       if(dom.offsetWidth){
@@ -186,6 +190,9 @@ export default defineComponent({
         type.value = newV;
       }
     })
+    watch(() => _props.modelValue,(newV) => {
+      selectBox.value = newV;
+    },{immediate:true})
     return {
       calendarList,
       boxItemWidth,
@@ -196,7 +203,8 @@ export default defineComponent({
       selectYear,
       selectMonth,
       year,month,
-      changeCalendar
+      changeCalendar,
+      returnFullscreen
     }
   }
 })
@@ -204,13 +212,17 @@ export default defineComponent({
 
 <template>
   <div id="calendar"  class="calendar">
-    <div class="serach flex flex-r-r">
-      <CptSelect v-model="month" @change="changeCalendar(year,month)" class="item" size="small" style="width:80px" placeholder="">
-        <CptOption v-for="item in selectMonth" :value="item" :label="item" />
-      </CptSelect>
-      <CptSelect v-model="year" @change="changeCalendar(year,month)" class="item" size="small" style="width:80px" placeholder="">
-        <CptOption v-for="item in selectYear" :value="item" :label="item" />
-      </CptSelect>
+    <div class="serach flex">
+      <CptButton v-if="fullscreen" @click="returnFullscreen" type="primary">退出</CptButton>
+      <div v-else></div>
+      <div class="flex">
+        <CptSelect v-model="year" @change="changeCalendar(year,month)" class="item" size="small" style="width:80px" placeholder="">
+          <CptOption v-for="item in selectYear" :value="item" :label="item" />
+        </CptSelect>
+        <CptSelect v-model="month" @change="changeCalendar(year,month)" class="item" size="small" style="width:80px" placeholder="">
+          <CptOption v-for="item in selectMonth" :value="item" :label="item" />
+        </CptSelect>
+      </div>
     </div>
     <table class="card" v-if="type == 'card'">
       <thead>
@@ -241,7 +253,7 @@ export default defineComponent({
               </div>
               <ul v-if="item.todoList && item.todoList.length > 0">
                 <li class="ell" v-for="(todo,todoindex) in item.todoList"  :key="todoindex">
-                  <span>
+                  <span :title="todo.content">
                     <span class="mark" :style="{'background':colorType[todo.type]}"></span>
                     <span>{{todo.content}}</span>
                   </span>

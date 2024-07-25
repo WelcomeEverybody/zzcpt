@@ -1,4 +1,5 @@
 const CalendarProps = {
+  modelValue:{type:Array,default:[]},
   fullscreen:{type:Boolean,default:false},
   type:{type:String,default:'defalut'},
   todoList:{type:Array,default:[]},

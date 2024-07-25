@@ -8,7 +8,7 @@ const addClass = (props:any,name:string) => {
   if(!name){
     throw new Error('name is required')
   }
-  let classList = [];
+  let classList:string[] = [];
   const skip = [false];
   for(let i in props){
     if(i == 'loading')continue;

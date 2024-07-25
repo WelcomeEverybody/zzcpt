@@ -13,6 +13,11 @@ export default defineComponent({
 
     const selectValue = () => {
       if(props.disabled)return;
+      // 解决多选不能选中问题
+      if(select.value.multiline){
+        select.value.text.value = '';
+        select.value.text.label = ''; 
+      }
       select.value.text.value = props.value;
       select.value.text.label = props.label;
     }

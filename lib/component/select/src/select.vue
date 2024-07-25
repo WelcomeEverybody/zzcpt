@@ -67,7 +67,7 @@ export default defineComponent({
       if(props.multiline){
         iptD.value.addEventListener('keydown',popstate)
       }
-      if(props.size != 'defalut'){
+      if(props.size && props.size != 'defalut'){
         multiple.value.classList.add(props.size)
       }
     })
