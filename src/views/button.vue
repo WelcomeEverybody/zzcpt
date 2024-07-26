@@ -21,7 +21,7 @@ const code =
     <Cpt-button type="primary" shape="round">主要按钮</Cpt-button>
 </div>
 <div>
-    <Cpt-button type="primary" loading>卐</Cpt-button>
+    <Cpt-button type="primary" loading>1</Cpt-button>
     <Cpt-button type="primary" disabled>主要按钮</Cpt-button>
 </div>
 `
@@ -59,7 +59,7 @@ const code =
                 <span class="p-r-1"><Cpt-button type="primary" shape="round">主要按钮</Cpt-button></span>
             </div>
             <div class="m-t-1">
-                <span class="p-r-1"><Cpt-button type="primary" loading>卐</Cpt-button></span>
+                <span class="p-r-1"><Cpt-button type="primary" loading>1</Cpt-button></span>
                 <span class="p-r-1"><Cpt-button type="primary" disabled>主要按钮</Cpt-button></span>
             </div>
         </div>
