@@ -37,20 +37,20 @@ import {ref} from "vue";
 const open = ref(false);
 <\/script>
 `
-const code3 = 
-`<template>
-    <Cpt-button @click="open = !open">open</Cpt-button>
-    <Cpt-dialog v-model="open" :footShow="false">
-        <div>
-            hello word
-        </div>
-    </Cpt-dialog>
-</template>
-<script lang="ts" setup>
-import {ref} from "vue";
-const open = ref(false);
-<\/script>
-`
+// const code3 = 
+// `<template>
+//     <Cpt-button @click="open = !open">open</Cpt-button>
+//     <Cpt-dialog v-model="open" :footShow="false">
+//         <div>
+//             hello word
+//         </div>
+//     </Cpt-dialog>
+// </template>
+// <script lang="ts" setup>
+// import {ref} from "vue";
+// const open = ref(false);
+// <\/script>
+// `
 const code4 = 
 `<template>
     <Cpt-button @click="open = !open">open</Cpt-button>

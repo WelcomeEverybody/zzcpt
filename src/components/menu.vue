@@ -10,6 +10,9 @@ useRouter().beforeEach(to => {
 
 <template>
     <div class="menu">
+        <div class="logo">
+            <router-link to="/">我是LOGO</router-link>
+        </div>
         <div 
             class="item cursor transition" 
             v-for="item in menuJson" 
@@ -25,6 +28,11 @@ a{
     color: #606266;
     text-decoration: none;
     display: block;
+}
+.logo{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 .menu{
     padding: 30px 20px;

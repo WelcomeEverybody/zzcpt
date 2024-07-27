@@ -59,5 +59,17 @@
         "name": "对话框 dialog",
         "type": "dialog",
         "path": "/dialog"
+    },
+    "slider":{
+        "id":12,
+        "name": "滑动输入条 slider",
+        "type": "slider",
+        "path": "/slider"
+    },
+    "scrollbar":{
+        "id":13,
+        "name": "滚动条 scrollbar",
+        "type": "scrollbar",
+        "path": "/scrollbar"
     }
 }

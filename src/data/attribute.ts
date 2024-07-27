@@ -78,6 +78,19 @@ const data: any = {
     {a:"事件",b:"事件",c:"事件",d:"事件"},
     {a:"close",b:"关闭时触发/遮罩也会触发",c:"fn",d:"()=>{}"},
     {a:"enter",b:"确定时触发",c:"fn",d:"()=>{}"},
+  ],
+  slider:[
+    {a:"modelValue",b:"绑定值",c:"number",d:"0"},
+    {a:"min",b:"最小值",c:"number",d:"0"},
+    {a:"max",b:"最大值",c:"number",d:"100"},
+    {a:"step",b:"步长",c:"number",d:"1"},
+    {a:"showTips",b:"是否显示提示",c:"boolean",d:"true"},
+    {a:"showStops",b:"是否显示间断点",c:"boolean",d:"false"},
+    {a:"reverse",b:"是否反向",c:"boolean",d:"false"},
+    // {a:"vertical",b:"是否为垂直模式",c:"boolean",d:"false"},
+    {a:"disabled",b:"是否禁用",c:"boolean",d:"false"},
+    {a:"range",b:"是否为范围选择",c:"boolean",d:"false"},
+
   ]
 };
 export default data;

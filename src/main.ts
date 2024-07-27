@@ -5,7 +5,7 @@ import router from './router';
 
 
 
-import zzcpt from "../lib/main";
+import zzcpt from "../lib/index.js";
 const app = createApp(App);
 app.use(router)
 app.use(zzcpt)

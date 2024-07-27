@@ -54,7 +54,7 @@ const code =
                 <span class="p-r-1"><Cpt-button type="primary" size="small">主要按钮</Cpt-button></span>
             </div>
             <div class="m-t-1">
-                <span class="p-r-1"><Cpt-button type="primary" shape="circle">卐</Cpt-button></span>
+                <span class="p-r-1"><Cpt-button type="primary" shape="circle">中</Cpt-button></span>
                 <span class="p-r-1"><Cpt-button type="primary">主要按钮</Cpt-button></span>
                 <span class="p-r-1"><Cpt-button type="primary" shape="round">主要按钮</Cpt-button></span>
             </div>

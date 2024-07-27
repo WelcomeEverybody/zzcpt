@@ -12,6 +12,8 @@ import radio from '../views/radio.vue'
 import showText from '../views/showtext.vue'
 import loading from '../views/loading.vue'
 import dialog from '../views/dialog.vue'
+import slider from "../views/slider.vue"
+import scrollbar from '../views/scrollbar.vue'
 
 const obj:any = {
   button:button,
@@ -23,7 +25,9 @@ const obj:any = {
   radio:radio,
   showtext:showText,
   loading:loading,
-  dialog:dialog
+  dialog:dialog,
+  slider:slider,
+  scrollbar:scrollbar
 }
 
 const routes:any = [

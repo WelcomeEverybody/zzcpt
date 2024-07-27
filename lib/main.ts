@@ -1,21 +1,34 @@
 import { App } from "vue";
+import { CptButton } from "./button/index";
+import { CptDropdown } from "./dropdown/index";
+import { CptCalendar } from "./calendar/index";
+import { CptSelect, CptSelectOption } from "./select/index";
+import { CptSwitch } from "./switch/index";
+import { CptUpload } from "./upload/index";
+import { CptCheckbox, CptCheckboxGroup, CptCheckboxButton } from "./checkbox/index";
+import { CptSlider } from "./slider/index";
+import { CptShowText } from "./showText/index";
+import { CptInput } from "./input/index";
+import { CptDialog } from "./dialog/index";
+import loading from "./loading/index";
 
-import zzcpt, {
+const zzcpt = [
   CptButton,
   CptDropdown,
   CptCalendar,
-  CptSelect,CptOption,
+  CptSelect,
+  CptSelectOption,
   CptSwitch,
   CptUpload,
-  CptMessage,
-  CptLevitatedSphere,
-  CptCheckbox,CptCheckboxGroup,CptCheckboxButton,
+  CptCheckbox,
+  CptCheckboxGroup,
+  CptCheckboxButton,
   CptSlider,
   CptShowText,
   CptInput,
-  loading,
-  CptDialog
-} from "./component/index";
+  CptDialog,
+  loading
+]
 
 const components = zzcpt;
 
@@ -37,16 +50,13 @@ export {
   CptButton,
   CptDropdown,
   CptCalendar,
-  CptSelect,CptOption,
+  CptSelect,CptSelectOption,
   CptSwitch,
   CptUpload,
-  CptMessage,
-  CptLevitatedSphere,
   CptCheckbox,CptCheckboxGroup,CptCheckboxButton,
   CptSlider,
   CptShowText,
   CptInput,
-  loading,
   CptDialog,
   ZUI as default
 };

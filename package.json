@@ -1,25 +1,17 @@
 {
   "name": "zzcpt",
-  "version": "0.1.51",
+  "version": "0.1.60",
   "private": false,
   "type": "module",
   "files": [
     "dist",
     "lib"
   ],
-  "homepage":"https://czhangzihao.github.io/zzcpt",
+  "homepage": "https://czhangzihao.github.io/zzcpt",
+  "main": "./lib/index.js",
   "module": "./dist/zzcpt.umd.cjs",
-  "main": "./dist/zzcpt.js",
   "style": "./dist/style.css",
   "typings": "./lib/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/zzcpt.js",
-      "require": "./dist/zzcpt.umd.cjs"
-    },
-    "./style": "./dist/style.css",
-    "./*": "./*"
-  },
   "keywords": [
     "vue",
     "vue3",
@@ -30,7 +22,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build",
+    "types": "vue-tsc --declaration --outDir types --emitDeclarationOnly --skipLibCheck",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -45,9 +38,9 @@
     "@types/prismjs": "^1.26.4",
     "@vitejs/plugin-vue": "^4.2.3",
     "gh-pages": "^6.1.1",
-    "typescript": "^5.0.2",
+    "typescript": "^5.5.4",
     "vite": "^4.4.5",
     "vite-plugin-prismjs": "^0.0.11",
-    "vue-tsc": "^1.8.5"
+    "vue-tsc": "^1.8.27"
   }
 }
