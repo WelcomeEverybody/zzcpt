@@ -3,6 +3,7 @@
   "version": "0.1.60",
   "private": false,
   "type": "module",
+  "license":"",
   "files": [
     "dist",
     "lib"

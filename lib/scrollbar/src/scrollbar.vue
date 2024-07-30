@@ -12,6 +12,7 @@ export default defineComponent({
         const height = Number(props.height.replace(/px/,''));
         const scrollbar = ref();
         const scrollbarBox = ref();
+        const scrollbarShow = ref(false);
         function initScrollbar(){
             const boxHeight = scrollbarBox.value.scrollHeight
             const scrollbarHeight = boxHeight / height  < 10 ? 15 : boxHeight / height;
@@ -20,17 +21,39 @@ export default defineComponent({
         onMounted(() => {
             initScrollbar();
         })
-        function scrollbarDown(e:any){
+        let isStart = ref(false);
+        let boxTop = ref(0)
+        function scrollbarEnter(e:any){
+            scrollbarShow.value = true;
         }
         function scrollbarMove(e:any){
-            
+            if(!isStart.value)return;
+            const top = e.clientY - scrollbar.value.style.top.replace(/px/,'') - boxTop.value;
+            // 获取移动的距离
+            console.log(top)
+            scrollbar.value.style.top = top + 'px';
+
+        }
+        function scrollbarDown(e:any){
+            isStart.value = true;
+            boxTop.value = scrollbarBox.value.offsetTop;
+        }
+        function scrollbarLeave(e:any){
+            scrollbarShow.value = false;
+        }
+        function scrollbarUp(e:any){
+            isStart.value = false;
         }
         return {
             props,
             scrollbar,
             scrollbarBox,
+            scrollbarShow,
+            scrollbarEnter,
+            scrollbarMove,
             scrollbarDown,
-            scrollbarMove
+            scrollbarLeave,
+            scrollbarUp
         }
     }
 })
@@ -38,9 +61,15 @@ export default defineComponent({
 </script>
 
 <template>
-    <div ref="scrollbarBox" class="scrollbarBox" :style="{'max-height': props.height}">
+    <div ref="scrollbarBox" :onmouseup="scrollbarUp" :onmouseenter="scrollbarEnter" :onmousemove="scrollbarMove" :onmouseleave="scrollbarLeave" class="scrollbarBox" :style="{'max-height': props.height}">
         <slot></slot>
-        <div ref="scrollbar" class="scrollbar" onmousedown="scrollbarDown" onmousemove="scrollbarMove"></div>
+        <div 
+            v-show="scrollbarShow"
+            ref="scrollbar" 
+            class="scrollbar pointer" 
+            :onmousedown="scrollbarDown"
+            
+        ></div>
     </div>
 </template>
 
@@ -62,5 +91,8 @@ export default defineComponent({
     border-radius: 5px;
     right: 0;
     top: 0;
+}
+.pointer{
+    cursor: pointer;
 }
 </style>
