@@ -1,9 +1,9 @@
 {
   "name": "zzcpt",
-  "version": "0.1.60",
+  "version": "0.1.61",
   "private": false,
   "type": "module",
-  "license":"",
+  "license":"MIT",
   "files": [
     "dist",
     "lib"
