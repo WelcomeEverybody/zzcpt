@@ -5,12 +5,13 @@ import { CptCalendar } from "./calendar/index";
 import { CptSelect, CptSelectOption } from "./select/index";
 import { CptSwitch } from "./switch/index";
 import { CptUpload } from "./upload/index";
-import { CptCheckbox, CptCheckboxGroup, CptCheckboxButton } from "./checkbox/index";
+import { CptCheckbox, CptCheckboxGroup } from "./checkbox/index";
 import { CptSlider } from "./slider/index";
 import { CptShowText } from "./showText/index";
 import { CptInput } from "./input/index";
 import { CptDialog } from "./dialog/index";
 import loading from "./loading/index";
+import { CptBackTop } from "./backtop/index";
 
 const zzcpt = [
   CptButton,
@@ -22,12 +23,12 @@ const zzcpt = [
   CptUpload,
   CptCheckbox,
   CptCheckboxGroup,
-  CptCheckboxButton,
   CptSlider,
   CptShowText,
   CptInput,
   CptDialog,
-  loading
+  loading,
+  CptBackTop
 ]
 
 const components = zzcpt;
@@ -53,10 +54,11 @@ export {
   CptSelect,CptSelectOption,
   CptSwitch,
   CptUpload,
-  CptCheckbox,CptCheckboxGroup,CptCheckboxButton,
+  CptCheckbox,CptCheckboxGroup,
   CptSlider,
   CptShowText,
   CptInput,
   CptDialog,
+  CptBackTop,
   ZUI as default
 };

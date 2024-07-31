@@ -1,5 +1,5 @@
 <script lang="ts">
-import {onUnmounted, ref} from "vue"
+import {onUnmounted, ref,nextTick} from "vue"
 import { defineComponent,onMounted,getCurrentInstance } from 'vue';
 import { ScrollbarProps } from './attribute';
 export default defineComponent({
@@ -17,21 +17,23 @@ export default defineComponent({
         const isInit = ref(false);
         const isInitShow = ref(true);
         onMounted(() => {
-            if(height === 0){
-                let pTop = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-top');
-                let pBottom = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-bottom');
-                height = scrollEle.value.parentElement.getBoundingClientRect().height - Number(pTop.replace(/px/,'')) - Number(pBottom.replace(/px/,''));
-            }
-            let itemHeight = 0;
-            const childrenLng = scrollbarBox.value.children.length;
-            const children = scrollbarBox.value.children;
-            for(let i = 0;i < childrenLng;i++){
-                itemHeight += children[i].getBoundingClientRect().height;
-            }
-            if(itemHeight <= height){
-                isInitShow.value = false;
-            }
-            initScrollbar();
+            nextTick(() => {
+                if(height === 0){
+                    let pTop = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-top');
+                    let pBottom = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-bottom');
+                    height = scrollEle.value.parentElement.getBoundingClientRect().height - Number(pTop.replace(/px/,'')) - Number(pBottom.replace(/px/,''));
+                }
+                let itemHeight = 0;
+                const childrenLng = scrollbarBox.value.children.length;
+                const children = scrollbarBox.value.children;
+                for(let i = 0;i < childrenLng;i++){
+                    itemHeight += children[i].getBoundingClientRect().height;
+                }
+                if(itemHeight <= height){
+                    isInitShow.value = false;
+                }
+                initScrollbar();
+            })
         })
         function initScrollbar(){
             const boxHeight = scrollbarBox.value.scrollHeight

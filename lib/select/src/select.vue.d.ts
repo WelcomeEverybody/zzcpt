@@ -1,0 +1,33 @@
+import { PropType } from "vue";
+export declare const CptSelectProps:{
+    props:{
+        modelValue:{
+            type:PropType<any>,
+            required:true,
+        },
+        size:{
+            type:PropType<string>,
+            required:false,
+        },
+        labelBg:{
+            type:PropType<string>,
+            required:false,
+        },
+        labelColor:{
+            type:PropType<string>,
+            required:false,
+        },
+       multiline:{
+          type:PropType<boolean>,
+          required:false,
+       },
+       placeholder:{
+          type:PropType<string>,
+          required:false,
+       }
+    },
+    emits:{
+        'update:modelValue':(value:boolean)=>boolean;
+        'change':()=>any;
+    }
+}

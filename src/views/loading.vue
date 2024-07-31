@@ -39,9 +39,9 @@ const Loading = ref(true)
             <div>
                 <Cpt-button @click="Loading = !Loading">点击切换</Cpt-button>
                 <Cpt-select v-loading="Loading" v-model="selects" labelColor="#f00" labelBg="#fff" placeholder="请选择">
-                    <Cpt-option label="选项1" value="1"></Cpt-option>
-                    <Cpt-option label="选项2" value="2"></Cpt-option>
-                    <Cpt-option label="选项3" value="3"></Cpt-option>
+                    <Cpt-select-option label="选项1" value="1"></Cpt-select-option>
+                    <Cpt-select-option label="选项2" value="2"></Cpt-select-option>
+                    <Cpt-select-option label="选项3" value="3"></Cpt-select-option>
                 </Cpt-select>
             </div>
         </div>

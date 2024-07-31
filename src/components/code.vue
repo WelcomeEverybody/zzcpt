@@ -28,39 +28,6 @@ pre code{
     position: relative;
     top: 20px;
 }
-pre code::before {
-    content: "";
-    position: absolute;
-    background: red;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    top: 10px;
-    left: 15px;
-    transform: translate(-50%);
-}
-pre code::after {
-    content: "";
-    position: absolute;
-    background: sandybrown;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    top: 10px;
-    left: 30px;
-    transform: translate(-50%);
-}
-pre code:first-child::after{
-        content: "";
-        position: absolute;
-        background: limegreen;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        top: -26px;
-        left: -15px;
-        transform: translate(-50%);
-}
 pre {
     overflow: hidden !important;
   

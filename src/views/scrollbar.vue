@@ -1,6 +1,13 @@
 <script setup lang="ts">
+import {ref} from "vue";
 import Code from '../components/code.vue';
 import Attribute from '../components/attribute.vue';
+
+
+const list = ref(50)
+setTimeout(() => {
+    list.value = 100
+}, 3000);
 
 const code = 
 `<template>
@@ -28,7 +35,7 @@ const code =
         <div class="preview">
             <div class="box">
                 <Cpt-scrollbar>
-                        <p v-for="item in 50" :key="item">{{ item }}</p>
+                        <p v-for="item in list" :key="item">{{ item }}</p>
                 </Cpt-scrollbar>
             </div>
         </div>

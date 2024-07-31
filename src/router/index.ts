@@ -14,6 +14,7 @@ import loading from '../views/loading.vue'
 import dialog from '../views/dialog.vue'
 import slider from "../views/slider.vue"
 import scrollbar from '../views/scrollbar.vue'
+import backtop from '../views/backtop.vue'
 
 const obj:any = {
   button:button,
@@ -27,7 +28,8 @@ const obj:any = {
   loading:loading,
   dialog:dialog,
   slider:slider,
-  scrollbar:scrollbar
+  scrollbar:scrollbar,
+  backtop:backtop
 }
 
 const routes:any = [

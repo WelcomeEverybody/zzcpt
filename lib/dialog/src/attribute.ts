@@ -5,7 +5,6 @@ const dialogProps = {
   headBg:{type:String,default:'#F1F4F8'},
   headColor:{type:String,default:'#000'},
   headShow:{type:Boolean,default:true},
-  // iconShow:{type:Boolean,default:true},
   footShow:{type:Boolean,default:true},
   bgClose:{type:Boolean,default:true},
   leaveText:{type:String,default:'取消'},

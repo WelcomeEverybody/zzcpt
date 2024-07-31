@@ -71,5 +71,11 @@
         "name": "滚动条 scrollbar",
         "type": "scrollbar",
         "path": "/scrollbar"
+    },
+    "backtop":{
+        "id":14,
+        "name": "滚动条 backtop",
+        "type": "backtop",
+        "path": "/backtop"
     }
 }

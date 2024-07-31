@@ -3,6 +3,7 @@ import {defineComponent,ref,onMounted,watch} from "vue";
 import {CalendarProps} from "./attribute";
 import lunar from "../../utils/lunarDay";
 import {CptSelect,CptSelectOption} from "../../select/index";
+import { CptScrollbar } from "../../scrollbar";
 export default defineComponent({
   name:"CptCalendar",
   props:CalendarProps,
@@ -248,19 +249,21 @@ export default defineComponent({
             :style="{
               'height':boxItemWidth - 4 + 'px',
               'max-height':boxItemWidth - 4 +'px',
-              'max-width':boxItemWidth +'px'
+              'max-width':boxItemWidth +'px',
             }"
           >
               <div class="showDate">
                 {{ item.day }}
               </div>
               <ul v-if="item.todoList && item.todoList.length > 0">
-                <li class="ell" v-for="(todo,todoindex) in item.todoList"  :key="todoindex">
-                  <span :title="todo.content">
-                    <span class="mark" :style="{'background':colorType[todo.type]}"></span>
-                    <span>{{todo.content}}</span>
-                  </span>
-                </li>
+                <CptScrollbar>
+                  <li class="ell" v-for="(todo,todoindex) in item.todoList"  :key="todoindex">
+                    <span :title="todo.content">
+                      <span class="mark" :style="{'background':colorType[todo.type]}"></span>
+                      <span>{{todo.content}}</span>
+                    </span>
+                  </li>
+                </CptScrollbar>
               </ul>
               <ul v-else></ul>
           </td>
