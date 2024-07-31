@@ -1,15 +1,46 @@
 <script setup lang="ts">
+import Code from '../components/code.vue';
+import Attribute from '../components/attribute.vue';
 
+const code = 
+`<template>
+    <div class="box">
+        <Cpt-scrollbar>
+                <p v-for="item in 50" :key="item">{{ item }}</p>
+        </Cpt-scrollbar>
+    </div>
+</template>
+<style>
+.box{
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 200px;
+    padding: 10px;
+}
+</style>
+`
 </script>
 
 <template>
-    <Cpt-scrollbar height="300px" class="box">
-        <p v-for="item in 100" :key="item">{{ item }}</p>
-    </Cpt-scrollbar>
+    <div>
+        <h1>Scrollbar 滚动条</h1>
+        <h2>滚动条</h2>
+        <p>未设置高度时，会获取父节点高度</p>
+        <div class="preview">
+            <div class="box">
+                <Cpt-scrollbar>
+                        <p v-for="item in 50" :key="item">{{ item }}</p>
+                </Cpt-scrollbar>
+            </div>
+        </div>
+        <Code :code="code"></Code>
+        <Attribute name="scrollbar" />
+    </div>
 </template>
 
 <style scoped>
 .box{
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: 200px;
+    padding: 10px;
 }
 </style>

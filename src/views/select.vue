@@ -64,9 +64,12 @@ const multilines = ref()
             <div style="height: 20px;"></div>
             <div>
                 <Cpt-select size="large" v-model="multilines" labelColor="#00f" labelBg="#0f0" placeholder="请选择" multiline>
-                    <Cpt-select-option label="选项1" value="1"></Cpt-select-option>
-                    <Cpt-select-option label="选项2" value="2"></Cpt-select-option>
-                    <Cpt-select-option label="选项3" value="3"></Cpt-select-option>
+                    <Cpt-select-option 
+                        v-for="item in 1000" 
+                        :key="item" 
+                        :label="'选项'+item" 
+                        :value="item"
+                    ></Cpt-select-option>
                 </Cpt-select>
             </div>
         </div>

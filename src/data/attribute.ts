@@ -90,7 +90,9 @@ const data: any = {
     // {a:"vertical",b:"是否为垂直模式",c:"boolean",d:"false"},
     {a:"disabled",b:"是否禁用",c:"boolean",d:"false"},
     {a:"range",b:"是否为范围选择",c:"boolean",d:"false"},
-
+  ],
+  scrollbar:[
+    {a:"height",b:"高度",c:"string",d:"100%"},
   ]
 };
 export default data;

@@ -78,7 +78,6 @@
   border-radius:var(--radius);
   border:1px solid var(--grey);
   box-shadow:0 2px 12px 0 rgba(0,0,0,0.1);
-  top:calc(100% + 10px);
   max-height:180px;
   overflow-y:auto;
   overflow-x:hidden;
@@ -86,6 +85,14 @@
   box-sizing:border-box;
   user-select: none;
   border-radius: 5px;
+
+}
+.select-option::-webkit-scrollbar{
+  width: 7px;
+}
+.select-option::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
 }
 
 .slide-fade-enter-active {

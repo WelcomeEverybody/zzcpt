@@ -1,6 +1,7 @@
 <script lang="ts">
 import {defineComponent,ref,onMounted,watch,computed} from "vue";
 import {SelectProps} from "./attribute";
+import {CptScrollbar} from '../scrollbar';
 export default defineComponent({
   name:"CptSelect",
   props:SelectProps,
@@ -58,10 +59,22 @@ export default defineComponent({
     const popstate = (e: any) => {
       if (e.keyCode === 8) {
         multilineArr.value.splice(multilineArr.value.length - 1,1);
+        setSelectOptionPosition()
       }
+    }
+    const setSelectOptionPosition = () => {
+      const top = select.value.getBoundingClientRect().top;
+      const left = select.value.getBoundingClientRect().left;
+      const height = select.value.getBoundingClientRect().height;
+      const width = select.value.clientWidth;
+      
+      selectOption.value.style.top = top + height + 10 + 'px';
+      selectOption.value.style.left = left + 'px';
+      selectOption.value.style.width = width + 'px';
     }
     onMounted(() => {
       select.value.addEventListener('mousedown',preventDefaults);
+      selectOption.value.addEventListener('mousedown',preventDefaults);
       iptD.value.addEventListener("blur", iptDBlurFn);
       iptD.value.addEventListener("focus", iptFocusFn);
       if(props.multiline){
@@ -70,15 +83,9 @@ export default defineComponent({
       if(props.size && props.size != 'defalut'){
         multiple.value.classList.add(props.size)
       }
-      const top = select.value.getBoundingClientRect().top;
-      const left = select.value.getBoundingClientRect().left;
-      const width = select.value.clientWidth;
-      
-      selectOption.value.style.top = top + 40 + 'px';
-      selectOption.value.style.left = left + 'px';
-      selectOption.value.style.width = width + 'px';
+      setSelectOptionPosition()
     })
-    const multilineValueArr = ref(computed(() =>{return multilineArr.value.map((item:any) => {return item.value})}))
+    const multilineValueArr = ref(computed(() =>{return multilineArr.value.map((item:any) => {return item.value}) && setTimeout(() => {setSelectOptionPosition()});}));
     watch(() => text.value, (newVal) => {
       if(props.multiline && newVal.value){
         let index = -1;
@@ -134,7 +141,7 @@ export default defineComponent({
       <Transition name="slide-fade" v-show="optionShow">
           <div ref="selectOption" class="select-option">
             <ul @click="optionClick">
-              <slot></slot>
+                <slot></slot>
             </ul>
           </div>
       </Transition>
@@ -143,5 +150,5 @@ export default defineComponent({
 </template>
 <style scoped>
 @import url("../../index.css");
-@import url('../css/style.css')
+@import url('../css/style.css');
 </style>
