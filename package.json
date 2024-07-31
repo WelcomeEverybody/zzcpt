@@ -1,13 +1,17 @@
 {
   "name": "zzcpt",
-  "version": "0.1.62",
+  "version": "0.1.63",
   "private": false,
   "type": "module",
-  "license":"MIT",
+  "license": "MIT",
   "files": [
     "dist",
     "lib"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Czhangzihao/zzcpt.git"
+  },
   "homepage": "https://czhangzihao.github.io/zzcpt",
   "main": "./lib/index.js",
   "module": "./dist/zzcpt.umd.cjs",
