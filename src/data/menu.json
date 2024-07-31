@@ -74,7 +74,7 @@
     },
     "backtop":{
         "id":14,
-        "name": "滚动条 backtop",
+        "name": "回到顶部 backtop",
         "type": "backtop",
         "path": "/backtop"
     }

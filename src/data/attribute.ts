@@ -87,12 +87,24 @@ const data: any = {
     {a:"showTips",b:"是否显示提示",c:"boolean",d:"true"},
     {a:"showStops",b:"是否显示间断点",c:"boolean",d:"false"},
     {a:"reverse",b:"是否反向",c:"boolean",d:"false"},
-    // {a:"vertical",b:"是否为垂直模式",c:"boolean",d:"false"},
     {a:"disabled",b:"是否禁用",c:"boolean",d:"false"},
     {a:"range",b:"是否为范围选择",c:"boolean",d:"false"},
   ],
   scrollbar:[
     {a:"height",b:"高度",c:"string",d:"100%"},
+  ],
+  backtop:[
+    {a:"target",b:"绑定值",c:"string",d:"~"},
+    {a:"top",b:"距离顶部的距离",c:"number",d:"100"},
+    {a:"right",b:"元素右侧定位",c:"number",d:"100"},
+    {a:"bottom",b:"元素底部定位",c:"number",d:"100"},
+    {a:"width",b:"宽度",c:"string",d:"40px"},
+    {a:"height",b:"高度",c:"string",d:"40px"},
+    {a:"bgColor",b:"背景颜色",c:"string",d:"#7ac1ff"},
+    {a:"事件",b:"事件",c:"事件",d:"事件"},
+    {a:"click",b:"点击时触发",c:"fn",d:"()=>{}"},
+    {a:"插槽",b:"插槽",c:"插槽",d:"插槽"},
+    {a:"default",b:"default",c:"default",d:"UP"},
   ]
 };
 export default data;

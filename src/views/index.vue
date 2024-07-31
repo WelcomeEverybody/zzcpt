@@ -6,7 +6,7 @@ import Menu from '../components/menu.vue';
 <template>
   <div class="flex">
     <Menu />
-    <div class="content">
+    <div id="content" class="content">
       <router-view />
     </div>
   </div>

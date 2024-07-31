@@ -1,0 +1,17 @@
+.backtop{
+    position: fixed;
+    cursor: pointer;
+    z-index: 1000;
+}
+.slide-fade-enter-active {
+  transition: all 0.2s ease-out;
+}
+.slide-fade-leave-active {
+  transition: all 0.2s;
+}
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform-origin:top;
+  transform: rotateX(90deg);
+  opacity: 0;
+}

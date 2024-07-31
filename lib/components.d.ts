@@ -30,3 +30,6 @@ export {default as CptSlider} from "./slider";
 
 export type {CptSwitchProps} from "./switch/src/switch.vue";
 export {default as CptSwitch} from "./switch";
+
+export type {CptBacktopProps} from "./backtop/src/backtop.vue";
+export {default as CptBacktop} from "./backtop";
