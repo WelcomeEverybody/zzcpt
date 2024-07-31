@@ -7,7 +7,6 @@ export default defineComponent({
     emits:["click"],
     setup(props,{emit})
     {
-        const domTop = ref(0);
         var dom:any = null;
         const show = ref(false)
         onMounted(() => {
@@ -37,12 +36,7 @@ export default defineComponent({
             show.value = e;
         }
         function init(){
-            getTopNum();
             addEvent();
-        }
-        function getTopNum()
-        {
-            domTop.value = dom.offsetTop;
         }
         function go(){
             dom.scrollTo({top:0,behavior:'smooth'})
