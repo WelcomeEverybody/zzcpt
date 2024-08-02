@@ -27,6 +27,9 @@
   --warning-bg-hover:rgb(255, 129, 122);
   --warning-bg-active:rgb(240, 53, 43);
 }
+.cpt-btn span{
+  white-space: nowrap;
+}
 .cpt-large{
   height: 50px;
 }

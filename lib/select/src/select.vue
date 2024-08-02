@@ -1,7 +1,6 @@
 <script lang="ts">
 import {defineComponent,ref,onMounted,watch,computed} from "vue";
 import {SelectProps} from "./attribute";
-import {CptScrollbar} from '../scrollbar';
 export default defineComponent({
   name:"CptSelect",
   props:SelectProps,

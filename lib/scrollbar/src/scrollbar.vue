@@ -1,13 +1,12 @@
 <script lang="ts">
 import {onUnmounted, ref,nextTick} from "vue"
-import { defineComponent,onMounted,getCurrentInstance } from 'vue';
+import { defineComponent,onMounted } from 'vue';
 import { ScrollbarProps } from './attribute';
 export default defineComponent({
     name:"CptScrollbar",
     props:ScrollbarProps,
-    setup(props,{emit})
+    setup(props)
     {   
-        
         var height = props.height === "100%"? 0 :  Number(props.height.replace(/px/,''));
         const scrollbar:any = ref();
         const scrollEle:any = ref();
@@ -44,7 +43,7 @@ export default defineComponent({
         let isStart = ref(false);
         let boxTop = ref(0)
         const startPosition = ref(0);
-        function scrollbarEnter(e:any){
+        function scrollbarEnter(){
             if(!isInitShow.value)return;
             scrollbarShow.value = true;
         }
@@ -72,12 +71,12 @@ export default defineComponent({
             startPosition.value = e.y - scrollEle.value.offsetTop - scrollbar.value.style.top.replace(/px/,'');
             boxTop.value = scrollbarBox.value.offsetTop;
         }
-        function scrollbarLeave(e:any){
+        function scrollbarLeave(){
             // e.preventDefault();
             if(isStart.value)return;
             scrollbarShow.value = false;
         }
-        function scrollbarUp(e:any){
+        function scrollbarUp(){
             isStart.value = false;
         }
         function setIsInit(e:boolean){

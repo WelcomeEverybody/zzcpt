@@ -65,7 +65,7 @@ export default defineComponent({
           arrow.style.right = 'auto';
           listRef.value.style.left = 100 + 'px'
         }
-
+        listRef.value.style.top = btnRef.value.buttonRef.getBoundingClientRect().height + 'px'
         if(isEvent == 'mouseenter'){
           clearTimeout(times);
           show.value = true;

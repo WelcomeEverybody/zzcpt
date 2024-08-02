@@ -77,5 +77,17 @@
         "name": "回到顶部 backtop",
         "type": "backtop",
         "path": "/backtop"
+    },
+    "canvassign":{
+        "id":15,
+        "name": "签名板 canvassign",
+        "type": "canvassign",
+        "path": "/canvassign"
+    },
+    "tabs":{
+        "id":16,
+        "name": "标签页 tabs",
+        "type": "tabs",
+        "path": "/tabs"
     }
 }

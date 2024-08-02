@@ -23,7 +23,7 @@ export default defineComponent({
             dom.addEventListener('scroll',scroll);
 
         }
-        function scroll(e:any){
+        function scroll(){
             if(dom.scrollTop > props.top){
                 if(!show.value)
                     setShow(true);

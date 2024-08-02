@@ -105,6 +105,15 @@ const data: any = {
     {a:"click",b:"点击时触发",c:"fn",d:"()=>{}"},
     {a:"插槽",b:"插槽",c:"插槽",d:"插槽"},
     {a:"default",b:"default",c:"default",d:"UP"},
+  ],
+  canvassign:[
+    {a:"target",b:"绑定值",c:"string",d:"-"},
+    {a:"width",b:"宽度",c:"string",d:"400"},
+    {a:"height",b:"高度",c:"string",d:"300"},
+    {a:"事件",b:"事件",c:"事件",d:"事件"},
+    {a:"save",b:"点击时触发",c:"fn",d:"()=>{}"},
+    {a:"插槽",b:"插槽",c:"插槽",d:"插槽"},
+    {a:"option",b:"option",c:"option",d:"default"},
   ]
 };
 export default data;

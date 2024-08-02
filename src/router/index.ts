@@ -15,6 +15,8 @@ import dialog from '../views/dialog.vue'
 import slider from "../views/slider.vue"
 import scrollbar from '../views/scrollbar.vue'
 import backtop from '../views/backtop.vue'
+import canvassign from '../views/canvassign.vue'
+import tabs from '../views/tabs.vue'
 
 const obj:any = {
   button:button,
@@ -29,7 +31,9 @@ const obj:any = {
   dialog:dialog,
   slider:slider,
   scrollbar:scrollbar,
-  backtop:backtop
+  backtop:backtop,
+  canvassign:canvassign,
+  tabs:tabs
 }
 
 const routes:any = [

@@ -12,6 +12,8 @@ import { CptInput } from "./input/index";
 import { CptDialog } from "./dialog/index";
 import loading from "./loading/index";
 import { CptBackTop } from "./backtop/index";
+import {CptCanvassign} from "./canvassign/index"
+import { CptTabs,CptTabPane } from "./tabs/index"
 
 const zzcpt = [
   CptButton,
@@ -28,7 +30,9 @@ const zzcpt = [
   CptInput,
   CptDialog,
   loading,
-  CptBackTop
+  CptBackTop,
+  CptCanvassign,
+  CptTabs,CptTabPane
 ]
 
 const components = zzcpt;
@@ -60,5 +64,7 @@ export {
   CptInput,
   CptDialog,
   CptBackTop,
+  CptCanvassign,
+  CptTabs,CptTabPane,
   ZUI as default
 };

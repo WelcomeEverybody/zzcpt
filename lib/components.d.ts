@@ -33,3 +33,11 @@ export {default as CptSwitch} from "./switch";
 
 export type {CptBacktopProps} from "./backtop/src/backtop.vue";
 export {default as CptBacktop} from "./backtop";
+
+export type {CptCanvassignProps} from "./canvassign/src/canvassign.vue";
+export {default as CptCanvassign} from "./canvassign";
+
+export type {CptTabsProps} from "./tabs/src/tabs.vue";
+export type {CptTabPaneProps} from "./tabs/src/tab-pane.vue";
+export {default as CptTabs} from "./tabs";
+export {default as CptTabsPane} from "./tabs/src/tab-pane";
