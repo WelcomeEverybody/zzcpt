@@ -5,12 +5,12 @@ import menuJson from '../data/menu.json';
 
 // 根据group分组数据
 const menu = JSON.parse(JSON.stringify(menuJson));
-var menus = []
+var menus:any = []
 function group() {
     const index = 'group';
-    const cloneData = [];
+    const cloneData:any = [];
     for(let key of Object.keys(menu)){
-        const item = menu[key];
+        const item:any= menu[key];
         const group = item[index];
         if(group){
             if(!cloneData[group]){

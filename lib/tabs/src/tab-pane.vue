@@ -12,7 +12,8 @@ export default defineComponent({
   emits:['update:modelValue'],
   setup(props) {
     const tabsModelValue = ref();
-    const instance = getCurrentInstance().parent.ctx;
+    const i:any = getCurrentInstance()
+    const instance:any = i?.parent?.ctx;
     onMounted(() => {
       const tabsData = instance.tabs;
       tabsData.push({label:props.label})

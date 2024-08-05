@@ -9,7 +9,7 @@ setTimeout(() => {
         data.value.push('tab' + (i + 4))
     }
 }, 2000);
-const remove = (item) => {
+const remove = (item:any) => {
     console.log(item)
 }
 </script>

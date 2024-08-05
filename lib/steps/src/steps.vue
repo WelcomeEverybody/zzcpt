@@ -12,7 +12,7 @@ export default defineComponent({
             default:'horizontal'
         },
     },
-    setup(props,{emit:e}) {
+    setup() {
         
         return {
             

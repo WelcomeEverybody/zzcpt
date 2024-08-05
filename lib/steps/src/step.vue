@@ -3,19 +3,18 @@ import {defineComponent,getCurrentInstance,onMounted} from "vue";
 export default defineComponent({
     name:"CptStep",
     setup() {
-        const instance = getCurrentInstance();
+        const instance:any = getCurrentInstance();
         const value = instance.ctx.$parent.modelValue;
         var childrens:any = '';
-        var index = 0
+        // var index = 0
         onMounted(() => {
-            childrens = instance.ctx.$parent.$el.children;
-            console.log(instance)
+            childrens = instance?.ctx.$parent.$el.children;
         })
         function setStyle() {
-            const obj = {
-                0:['stepStyle'],
-                1:['stepStyle1']
-            }
+            // const obj:any = {
+            //     0:['stepStyle'],
+            //     1:['stepStyle1']
+            // }
         }
         return {
             setStyle,
