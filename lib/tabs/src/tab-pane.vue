@@ -11,13 +11,13 @@ export default defineComponent({
   },
   emits:['update:modelValue'],
   setup(props) {
-    const instance = getCurrentInstance() as any;
-    const tabsData = instance.parent.ctx.tabs;
     const tabsModelValue = ref();
+    const instance = getCurrentInstance().parent.ctx;
     onMounted(() => {
+      const tabsData = instance.tabs;
       tabsData.push({label:props.label})
     })
-    watch(() => instance.parent.ctx.modelValue,(val) => {
+    watch(() => instance.modelValue,(val) => {
       tabsModelValue.value = val;
     },{immediate:true})
     return {
@@ -35,8 +35,5 @@ export default defineComponent({
 </template>
 
 <style scoped>
-.tab-pane{
-  width: 100%;
-  height: 100%;
-}
+@import url("../style/style.css");
 </style>

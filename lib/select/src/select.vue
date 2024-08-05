@@ -19,6 +19,7 @@ export default defineComponent({
 
     
     const inputFocus = () => {
+      setSelectOptionPosition()
       if(!optionShow.value){
         iptD.value.focus();
         iptD.value.setAttribute('readonly','readonly');

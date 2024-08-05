@@ -1,0 +1,35 @@
+<script lang="ts">
+import {defineComponent,getCurrentInstance,onMounted} from "vue";
+export default defineComponent({
+    name:"CptStep",
+    setup() {
+        const instance = getCurrentInstance();
+        const value = instance.ctx.$parent.modelValue;
+        var childrens:any = '';
+        var index = 0
+        onMounted(() => {
+            childrens = instance.ctx.$parent.$el.children;
+            console.log(instance)
+        })
+        function setStyle() {
+            const obj = {
+                0:['stepStyle'],
+                1:['stepStyle1']
+            }
+        }
+        return {
+            setStyle,
+            value,childrens
+            
+        }
+    },
+})
+</script>
+<template>
+    <span class="step">
+        <slot></slot>
+    </span>
+</template>
+<style scoped>
+@import url("../style/style.css");
+</style>

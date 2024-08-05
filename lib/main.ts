@@ -14,6 +14,7 @@ import loading from "./loading/index";
 import { CptBackTop } from "./backtop/index";
 import {CptCanvassign} from "./canvassign/index"
 import { CptTabs,CptTabPane } from "./tabs/index"
+import { CptSteps,CptStep } from "./steps/index"
 
 const zzcpt = [
   CptButton,
@@ -32,7 +33,8 @@ const zzcpt = [
   loading,
   CptBackTop,
   CptCanvassign,
-  CptTabs,CptTabPane
+  CptTabs,CptTabPane,
+  CptSteps,CptStep
 ]
 
 const components = zzcpt;
@@ -66,5 +68,7 @@ export {
   CptBackTop,
   CptCanvassign,
   CptTabs,CptTabPane,
+  CptSteps,
+  CptStep,
   ZUI as default
 };

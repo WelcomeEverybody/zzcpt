@@ -3,91 +3,120 @@
         "id":1,
         "name": "按钮 button",
         "type":"button",
-        "path": "/button"
+        "path": "/button",
+        "group": "通用"
     },
     "DropDown": {
         "id":2,
         "name": "下拉菜单 dropdown",
         "type": "dropdown",
-        "path": "/dropdown"
+        "path": "/dropdown",
+        "group": "导航"
     },
     "calendar": {
         "id":3,
         "name": "日历 calendar",
         "type": "calendar",
-        "path": "/calendar"
+        "path": "/calendar",
+        "group": "数据展示"
     },
     "switch": {
         "id":4,
         "name": "开关 switch",
         "type": "switch",
-        "path": "/switch"
+        "path": "/switch",
+        "group": "数据录入"
     },
     "select":{
         "id":5,
         "name": "选择器 select",
         "type": "select",
-        "path": "/select"
+        "path": "/select",
+        "group": "数据录入"
     },
     "checkbox":{
         "id":6,
         "name": "复选框 checkbox",
         "type": "checkbox",
-        "path": "/checkbox"
+        "path": "/checkbox",
+        "group": "数据录入"
     },
     "radio":{
         "id":7,
         "name": "单选框 radio",
         "type": "radio",
-        "path": "/radio"
+        "path": "/radio",
+        "group": "数据录入"
     },
 
     "showText":{
         "id":9,
         "name": "显示文本 showText",
         "type": "showtext",
-        "path": "/showtext"
+        "path": "/showtext",
+        "group": "数据展示"
     },
     "loading":{
         "id":10,
         "name": "加载 loading",
         "type": "loading",
-        "path": "/loading"
+        "path": "/loading",
+        "group": "反馈"
     },
     "dialog":{
         "id":11,
         "name": "对话框 dialog",
         "type": "dialog",
-        "path": "/dialog"
+        "path": "/dialog",
+        "group": "反馈"
     },
     "slider":{
         "id":12,
         "name": "滑动输入条 slider",
         "type": "slider",
-        "path": "/slider"
+        "path": "/slider",
+        "group": "数据录入"
     },
     "scrollbar":{
         "id":13,
         "name": "滚动条 scrollbar",
         "type": "scrollbar",
-        "path": "/scrollbar"
+        "path": "/scrollbar",
+        "group":"反馈"
     },
     "backtop":{
         "id":14,
         "name": "回到顶部 backtop",
         "type": "backtop",
-        "path": "/backtop"
+        "path": "/backtop",
+        "group": "导航"
     },
     "canvassign":{
         "id":15,
         "name": "签名板 canvassign",
         "type": "canvassign",
-        "path": "/canvassign"
+        "path": "/canvassign",
+        "group": "数据录入"
     },
     "tabs":{
         "id":16,
         "name": "标签页 tabs",
         "type": "tabs",
-        "path": "/tabs"
+        "path": "/tabs",
+        "group": "导航"
+    },
+    "steps":{
+        "id":17,
+        "name": "步骤条 steps",
+        "type": "steps",
+        "path": "/steps",
+        "group": "导航"
+    },
+    "collapse":{
+        "id":18,
+        "name": "折叠面板 collapse",
+        "type": "collapse",
+        "path": "/collapse",
+        "group": "数据展示"
     }
 }

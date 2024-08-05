@@ -17,6 +17,7 @@ import scrollbar from '../views/scrollbar.vue'
 import backtop from '../views/backtop.vue'
 import canvassign from '../views/canvassign.vue'
 import tabs from '../views/tabs.vue'
+import steps from '../views/steps.vue'
 
 const obj:any = {
   button:button,
@@ -33,7 +34,8 @@ const obj:any = {
   scrollbar:scrollbar,
   backtop:backtop,
   canvassign:canvassign,
-  tabs:tabs
+  tabs:tabs,
+  steps:steps
 }
 
 const routes:any = [

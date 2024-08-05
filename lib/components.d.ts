@@ -20,7 +20,7 @@ export {default as CptScrollbar} from "./scrollbar";
 export type {CptSelectProps} from "./select/src/select.vue";
 export type {CptSelectOptionProps} from "./select/src/select-option.vue";
 export {default as CptSelect} from "./select";
-export {default as CptSelectOption} from "./select/src/selectOption";
+export {default as CptSelectOption} from "./select";
 
 export type {CptShowTextProps} from "./showText/src/showText.vue";
 export {default as CptShowText} from "./showText";
@@ -41,3 +41,8 @@ export type {CptTabsProps} from "./tabs/src/tabs.vue";
 export type {CptTabPaneProps} from "./tabs/src/tab-pane.vue";
 export {default as CptTabs} from "./tabs";
 export {default as CptTabsPane} from "./tabs/src/tab-pane";
+
+export type {CptSteps} from "./steps/src/steps.vue";
+export type {CptStep} from "./steps/src/step.vue";
+export {default as CptSteps} from "./steps";
+export {default as CptStep} from "./steps";

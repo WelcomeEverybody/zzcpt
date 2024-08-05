@@ -17,23 +17,29 @@ export default defineComponent({
         const isInitShow = ref(true);
         onMounted(() => {
             nextTick(() => {
-                if(height === 0){
-                    let pTop = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-top');
-                    let pBottom = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-bottom');
-                    height = scrollEle.value.parentElement.getBoundingClientRect().height - Number(pTop.replace(/px/,'')) - Number(pBottom.replace(/px/,''));
-                }
-                let itemHeight = 0;
-                const childrenLng = scrollbarBox.value.children.length;
-                const children = scrollbarBox.value.children;
-                for(let i = 0;i < childrenLng;i++){
-                    itemHeight += children[i].getBoundingClientRect().height;
-                }
-                if(itemHeight <= height){
-                    isInitShow.value = false;
-                }
-                initScrollbar();
+                init()
+            })
+            window.addEventListener('resize',() => {
+                init()
             })
         })
+        function init(){
+            if(props.height === "100%"){
+                let pTop = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-top');
+                let pBottom = window.getComputedStyle(scrollEle.value.parentElement).getPropertyValue('padding-bottom');
+                height = scrollEle.value.parentElement.getBoundingClientRect().height - Number(pTop.replace(/px/,'')) - Number(pBottom.replace(/px/,''));
+            }
+            let itemHeight = 0;
+            const childrenLng = scrollbarBox.value.children.length;
+            const children = scrollbarBox.value.children;
+            for(let i = 0;i < childrenLng;i++){
+                itemHeight += children[i].getBoundingClientRect().height;
+            }
+            if(itemHeight <= height){
+                isInitShow.value = false;
+            }
+            initScrollbar();
+        }
         function initScrollbar(){
             const boxHeight = scrollbarBox.value.scrollHeight
             scrollbarHeight.value = height / (boxHeight / height) < 10 ? 15 :  height / (boxHeight / height);
@@ -145,44 +151,5 @@ export default defineComponent({
 </template>
 
 <style scoped>
-.scrollbarBox{
-    position: relative;
-    height: 100%;
-}
-.boxitem::-webkit-scrollbar{
-    width:0px;
-    height:0px;
-}
-.boxitem{
-    overflow: hidden;
-    overflow: auto;
-    width:100%;
-}
-.scrollbarBoxs{
-    position: absolute;
-    user-select: none;
-    top: 0;
-    right: 0;
-    height: 100%;
-    max-width: 10px;
-    width: 10px;
-    transform: all 1s;
-}
-.scrollbar{
-    position: absolute;
-    width: 100%;
-    height:10px;
-    background: rgb(175, 175, 175);
-    border-radius: 5px;
-    right: 0;
-    top: 0;
-    z-index: 100;
-    
-}
-.scrollbar:active{
-    width: 12px;
-}
-.pointer{
-    cursor: pointer;
-}
+@import url("../style/style.css");
 </style>
