@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent,watch,ref,onMounted,getCurrentInstance } from 'vue';
+import { defineComponent,watch,ref,onMounted,getCurrentInstance,nextTick } from 'vue';
 export default defineComponent({
   name: 'CptTabPane',
   props:{
@@ -7,7 +7,6 @@ export default defineComponent({
       type:String,
       default:''
     },
-
   },
   emits:['update:modelValue'],
   setup(props) {
@@ -15,8 +14,10 @@ export default defineComponent({
     const i:any = getCurrentInstance()
     const instance:any = i?.parent?.ctx;
     onMounted(() => {
-      const tabsData = instance.tabs;
-      tabsData.push({label:props.label})
+      nextTick(() => {
+        const tabsData = instance.tabs;
+        tabsData.push({label:props.label})
+      })
     })
     watch(() => instance.modelValue,(val) => {
       tabsModelValue.value = val;

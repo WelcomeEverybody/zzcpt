@@ -46,3 +46,6 @@ export type {CptSteps} from "./steps/src/steps.vue";
 export type {CptStep} from "./steps/src/step.vue";
 export {default as CptSteps} from "./steps";
 export {default as CptStep} from "./steps";
+
+export type {LoadingProps} from "./loading/src/loading.vue";
+export {default as Loading} from "./loading";
