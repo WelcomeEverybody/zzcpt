@@ -14,10 +14,10 @@ export default defineComponent({
     const i:any = getCurrentInstance()
     const instance:any = i?.parent?.ctx;
     onMounted(() => {
-      nextTick(() => {
+      // nextTick(() => {
         const tabsData = instance.tabs;
         tabsData.push({label:props.label})
-      })
+      // })
     })
     watch(() => instance.modelValue,(val) => {
       tabsModelValue.value = val;

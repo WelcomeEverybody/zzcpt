@@ -14,6 +14,16 @@ export default defineComponent({
     height:{
       type:Number,
       default:300
+    },
+    echoImg:{
+      type:Object,
+      default:{
+        url:'',
+        width:0,
+        height:0,
+        dx:0,
+        dy:0
+      }
     }
   },
   emits:['save'],
@@ -26,9 +36,19 @@ export default defineComponent({
     var eup = '';
     var is = false;
     var startPosition = {x:0,y:0,scrollY:0};
+    const echoImgVal= ref({
+        url:'',
+        width:0,
+        height:0,
+        dx:0,
+        dy:0
+      })
     onMounted(()=>{
       init()
     })
+    function initVal(){
+      echoImgVal.value = Object.assign(echoImgVal.value,props.echoImg);
+    }
     function init(){
       if(props.target){
         const dom = document.querySelector(props.target);
@@ -45,8 +65,23 @@ export default defineComponent({
       cvs.value.height = props.height;
       ctx = cvs.value?.getContext('2d');
       ctx.clearRect(0,0,props.width,props.height);
+      initVal()
+      echoImg()
     }
-    
+    // 回显图片
+    const echoImg = ()=>{
+      const echoImg = echoImgVal.value;
+      const img = new Image();
+      img.src = echoImg.url;
+      if(echoImg.width && echoImg.height){
+        img.width = echoImg.width;
+        img.height = echoImg.height;
+      }
+      img.onload = function(){
+        const that:any = this;
+        ctx.drawImage(img,echoImg.dx,echoImg.dy,that.width,that.height)
+      }
+    }
     function isMobileDevice() {
       return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     }

@@ -8,7 +8,17 @@ const save = (e:Object) => {
 }
 const code =
 `<template>
-    <CptCanvassign target="#content" @save="save" />
+    <CptCanvassign 
+            :echoImg="{
+                url:'https://www.chengchuangkeji.com.cn:8080/image/logo.png',
+                dx:50,
+                dy:50
+            }" 
+            target="#content" 
+            ref="cvs" 
+            style="border: 1px solid #000;" 
+            @save="save"
+        ></CptCanvassign>
 </template>
 <script lang="ts" setup>
 const save = (e:Object) => {
@@ -43,8 +53,17 @@ const save = (e:Object) => {
         <h2>基础用法</h2>
         <p>使用时，必需获取target作用在哪个元素上防止画布定位异常</p>
         <div class="preview">
-            <CptCanvassign target="#content" ref="cvs" style="border: 1px solid #000;" @save="save">
-            </CptCanvassign>
+            <CptCanvassign 
+                :echoImg="{
+                    url:'https://www.chengchuangkeji.com.cn:8080/image/logo.png',
+                    dx:50,
+                    dy:50
+                }" 
+                target="#content" 
+                ref="cvs" 
+                style="border: 1px solid #000;" 
+                @save="save"
+            ></CptCanvassign>
         </div>
         <Code :code="code"></Code>
         <h2>自定义操作按钮</h2>
