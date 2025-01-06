@@ -27,7 +27,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vue-tsc && vite build",
     "types": "vue-tsc --declaration --outDir types --emitDeclarationOnly --skipLibCheck",
     "preview": "vite preview"
   },

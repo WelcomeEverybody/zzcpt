@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent,watch,ref,onMounted,getCurrentInstance,nextTick } from 'vue';
+import { defineComponent,watch,ref,onMounted,getCurrentInstance } from 'vue';
 export default defineComponent({
   name: 'CptTabPane',
   props:{
@@ -13,6 +13,9 @@ export default defineComponent({
     const tabsModelValue = ref();
     const i:any = getCurrentInstance()
     const instance:any = i?.parent?.ctx;
+    if(!instance){
+      console.log(instance)
+    }
     onMounted(() => {
       // nextTick(() => {
         const tabsData = instance.tabs;

@@ -1,30 +1,73 @@
-import { PropType } from 'vue';
-export declare const CptCalendarProps: {
-    props:{
-        modelValue:{
-            type:PropType<any[]>,
-            required:true,
-        },
-        fullscreen:{
-            type:PropType<boolean>,
-            required:false
-        },
-        type:{
-            type:PropType<string>,
-            required:false,
-        },
-        todoList:{
-            type:PropType<any[]>,
-            required:false,
-        },
-        colorType:{
-            type:PropType<any>,
-            required:false,
-        }
-
-    },
-    emits:{
-        'update:fullscreen':(value:boolean)=>boolean;
-        'update:modelValue':(value:any[])=>boolean;
-    }
-};
+declare const _default: import("vue").DefineComponent<{
+    modelValue: {
+        type: ArrayConstructor;
+        default: never[];
+    };
+    fullscreen: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    type: {
+        type: StringConstructor;
+        default: string;
+    };
+    todoList: {
+        type: ArrayConstructor;
+        default: never[];
+    };
+    colorType: {
+        type: ObjectConstructor;
+        default: {
+            success: string;
+            danger: string;
+        };
+    };
+}, {
+    calendarList: any;
+    boxItemWidth: import("vue").Ref<number>;
+    select: (items: any) => void;
+    type: import("vue").Ref<string>;
+    todoList: unknown[];
+    colorType: Record<string, any>;
+    selectYear: any;
+    selectMonth: any;
+    year: import("vue").Ref<number>;
+    month: import("vue").Ref<number>;
+    changeCalendar: (year: number, month: number) => void;
+    returnFullscreen: () => void;
+    dom: import("vue").Ref<any>;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("update:modelValue" | "update:fullscreen")[], "update:modelValue" | "update:fullscreen", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<import("vue").ExtractPropTypes<{
+    modelValue: {
+        type: ArrayConstructor;
+        default: never[];
+    };
+    fullscreen: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
+    type: {
+        type: StringConstructor;
+        default: string;
+    };
+    todoList: {
+        type: ArrayConstructor;
+        default: never[];
+    };
+    colorType: {
+        type: ObjectConstructor;
+        default: {
+            success: string;
+            danger: string;
+        };
+    };
+}>> & {
+    "onUpdate:modelValue"?: ((...args: any[]) => any) | undefined;
+    "onUpdate:fullscreen"?: ((...args: any[]) => any) | undefined;
+}, {
+    type: string;
+    modelValue: unknown[];
+    todoList: unknown[];
+    fullscreen: boolean;
+    colorType: Record<string, any>;
+}, {}>;
+export default _default;
